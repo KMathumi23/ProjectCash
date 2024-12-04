@@ -1,0 +1,184 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px; /* Limit max width for larger screens */
+    margin: 0 auto;
+    padding: 0 20px; /* Add horizontal padding to prevent content from touching the edges */
+}
+
+h1, h2, h3 {
+    margin: 10px 0;
+    text-align: center; /* Center headings for better alignment */
+}
+
+/* Fixed Navbar */
+.navbar {
+    background: #333;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* Center the navigation links horizontally */
+    flex-grow: 1; /* Ensure the nav-links take up remaining space */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+.hero {
+    background: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.features {
+    padding: 60px 20px;
+    background: #f4f4f4;
+}
+
+.feature-list {
+    display: flex;
+    gap: 30px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: white;
+    padding: 25px;
+    border: 1px solid #ddd;
+    width: 28%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard {
+    padding: 80px 20px;
+    min-height: 70vh;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.chart-container {
+    max-width: 700px;
+    width: 100%;
+    margin: 30px auto;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.login {
+    padding: 60px 20px;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f4;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 15px;
+    }
+
+    .feature {
+        width: 45%; /* Adjust the feature width for tablet-sized screens */
+    }
+
+    .hero {
+        padding: 100px 20px;
+    }
+
+    .feature-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .feature {
+        width: 80%; /* Make feature cards more flexible for mobile */
+    }
+
+    .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .dashboard, .login {
+        padding: 40px 20px;
+    }
+
+    footer {
+        padding: 15px 0;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-padding-top: 80px; /* Set this equal to your navbar height */
+}
+
+/* Offset scroll position for fixed navbar */
+.hero, .features, .dashboard, .login {
+    padding-top: 80px; /* Adds padding to the top of each section */
+}
